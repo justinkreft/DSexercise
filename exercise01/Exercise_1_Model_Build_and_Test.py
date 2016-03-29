@@ -68,7 +68,7 @@ def main():
     clfknn1 = KNeighborsClassifier(n_neighbors=5)
     knnscores1 = cross_validation.cross_val_score(clfknn1, train_x_features, train_y, cv=10)
 
-    #Baseline Decision tree minimizing overfitting with stops on splitting @ 50 and max branch depth set to 10
+    #Baseline Decision tree minimizing overfitting with stops on splitting @ 50 and max branch depth set to 8
     clfdt1 = DecisionTreeClassifier(min_samples_split=50, max_depth=10)
     dtscores1 = cross_validation.cross_val_score(clfdt1, train_x_features, train_y, cv=10)
 
@@ -98,8 +98,8 @@ def main():
     clfknn2 = KNeighborsClassifier(n_neighbors=5)
     knnscores2 = cross_validation.cross_val_score(clfknn2, train_x_features, train_y, cv=10)
 
-    #Decision tree minimizing overfitting with stops on splitting @ 50 and max branch depth set to 10
-    clfdt2 = DecisionTreeClassifier(min_samples_split=50, max_depth=10)
+    #Decision tree minimizing overfitting with stops on splitting @ 50 and max branch depth set to 8
+    clfdt2 = DecisionTreeClassifier(min_samples_split=50, max_depth=8)
     dtscores2 = cross_validation.cross_val_score(clfdt2, train_x_features, train_y, cv=10)
 
 

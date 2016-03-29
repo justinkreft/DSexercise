@@ -16,7 +16,7 @@ File List:
 - Ex1KnnResults.csv - Final predictions of test set on KNN model
 - Exercise_1_Visualization.py - Python program creating (input=["Ex1_Flat_table.csv", "Ex1_KnnResults.csv"], output="Final_Output_Chart.png")
 - Final_Output_Chart.png - Charts generated showing relationship between three major variables and target class (over_50k)
-- Exercise_1_Explanation.txt - Explanation of methodology and results
+- Exercise_1_Explanation.docx - Explanation of methodology and results
 - README.md - This file
 
 Thanks for reviewing!
