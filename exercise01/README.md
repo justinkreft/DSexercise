@@ -1,3 +1,31 @@
+##
+This is a response to the "RTI CDS Analytics Exercise 01" (see below) containing all program files and exercise responses.
+
+File List:
+
+- exercise01.sqlite - Dataset provided by Exercise
+- Exercise_1_Data_Extraction.py - Python program that extracts data from sqlite database and flattens it into data to be analyzed. (input="exercise01.sqlite", output="Ex1_Flat_table.csv")
+- Ex1_Flat_table.csv - Flattened table from exercise01.sqlite
+- Exercise_1_Staging_and_Preprocess.py - Python program generates descriptive stats for all variables, performs data cleaning, and splits data into training and test sets. (input="Ex1_Flat_table.csv", output=["Ex1_train.csv", "Ex1_test.csv", "encoding_ref.pkl"])
+- Ex1_train.csv - Training Data for Models (validation done through 10 fold cross-validation)
+- Ex1_test.csv - Test Data for Models
+- encoding_ref.pkl - Pickle storing encoding map from string to numeric transform
+- Exercise_1_Model_Build_and_Test.py - Python program calculates (prints) information gain, tests four models in two rounds, tunes parameter for final model through cross-validation, tests final model, outputs results. (input=["Ex1_train.csv", "Ex1_test.csv"], output=["knnmodel.pkl", "dtmodel.pkl", "Ex1KnnResults.csv"])
+- knnmodel.pkl - Pickle of final KNN Model (k=
+- dtmodel.pkl - Pickle of final Decision Tree model (
+- Ex1KnnResults.csv - Final predictions of test set on KNN model
+- Exercise_1_Visualization.py - Python program creating (input=["Ex1_Flat_table.csv", "Ex1_KnnResults.csv"], output="Final_Output_Chart.png")
+- Final_Output_Chart.png - Charts generated showing relationship between three major variables and target class (over_50k)
+- Exercise_1_Explanation.txt - Explanation of methodology and results
+- README.md - This file
+
+Thanks for reviewing!
+Justin Kreft
+####
+
+Original Readme follows:
+
+####
 ## RTI CDS Analytics Exercise 01
 
 Welcome to Exercise 01. This exercise provides a small SQLite database with some data derived from the 1996 US Census and a few analytic questions related to working with SQL and open source analysis packages.
