@@ -1,7 +1,7 @@
 ##
 This is a response to the "RTI CDS Analytics Exercise 01" (see below) containing all program files and exercise responses.
 
-File List:
+File List (in order of task relevance):
 
 - exercise01.sqlite - Dataset provided by Exercise
 - Exercise_1_Data_Extraction.py - Python program that extracts data from sqlite database and flattens it into data to be analyzed. (input="exercise01.sqlite", output="Ex1_Flat_table.csv")
