@@ -11,8 +11,8 @@ File List (in order of task relevance):
 - Ex1_test.csv - Test Data for Models
 - encoding_ref.pkl - Pickle storing encoding map from string to numeric transform
 - Exercise_1_Model_Build_and_Test.py - Python program calculates (prints) information gain, tests four models in two rounds, tunes parameter for final model through cross-validation, tests final model, outputs results. (input=["Ex1_train.csv", "Ex1_test.csv"], output=["knnmodel.pkl", "dtmodel.pkl", "Ex1KnnResults.csv"])
-- knnmodel.pkl - Pickle of final KNN Model (k=
-- dtmodel.pkl - Pickle of final Decision Tree model (
+- knnmodel.pkl - Pickle of final KNN Model (k@10, Uniform)
+- dtmodel.pkl - Pickle of final Decision Tree model (min_samples_split=50, max_depth=8)
 - Ex1KnnResults.csv - Final predictions of test set on KNN model
 - Exercise_1_Visualization.py - Python program creating (input=["Ex1_Flat_table.csv", "Ex1_KnnResults.csv"], output="Final_Output_Chart.png")
 - Final_Output_Chart.png - Charts generated showing relationship between three major variables and target class (over_50k)
