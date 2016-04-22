@@ -1,5 +1,13 @@
 __author__ = 'justinkreft'
 
+###
+# Python program creates visualization png using seaborn library
+#
+# input=["Ex1_Flat_table.csv", "Ex1_KnnResults.csv"] from ..datafiles/
+# output="Final_Output_Chart.png" to working directory
+###
+
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -8,7 +16,7 @@ import seaborn as sns
 
 def main():
 
-    results = pd.read_csv('Ex1_Flat_table.csv')
+    results = pd.read_csv('datafiles/Ex1_Flat_table.csv')
     results['over_50k'] = results['over_50k'].map({1: "Over 50 K", 0: "Under 50 K"})
 
     # Define Color Palette

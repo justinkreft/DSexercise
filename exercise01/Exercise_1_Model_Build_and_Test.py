@@ -1,5 +1,18 @@
 __author__ = 'justinkreft'
 
+###
+# Python loads training and test sets and builds four models, tunes using 10fold validation,
+# for final selected model, and tests against test set
+# - program calculates (prints) information gain
+# - tests four models in two rounds
+# - tunes parameter for final model through cross-validation
+# - tests final model
+# - outputs results.
+# input=["Ex1_train.csv", "Ex1_test.csv"] from ..datafiles/
+# output=["knnmodel.pkl", "dtmodel.pkl", "Ex1KnnResults.csv"] to ..datafiles/
+###
+
+
 import pandas as pd
 import numpy as np
 import random
@@ -21,8 +34,8 @@ ALL_DATA_COL = NUMERIC_COL + CATEGORICAL_COL
 def main():
 
 #### Load Training data
-    train = pd.read_csv('Ex1_train.csv')
-    test = pd.read_csv('Ex1_test.csv')
+    train = pd.read_csv('datafiles/Ex1_train.csv')
+    test = pd.read_csv('datafiles/Ex1_test.csv')
 
 #### Calculate Information Gain for each variable for initial reference and first round feature elimination
     dropped_features = []
@@ -155,7 +168,7 @@ def main():
 
     clfknn2 = KNeighborsClassifier(n_neighbors=k.parameter)
     knnTrained = clfknn2.fit(train_x_features, train_y)
-    with open("knnmodel.pkl", "wb") as fout:
+    with open("datafiles/knnmodel.pkl", "wb") as fout:
         pickle.dump(knnTrained, fout, protocol=-1)
 
 ####Test Model vs test set
@@ -173,7 +186,7 @@ def main():
     predictions_out = test[list(features)]
     predictions_out['over_50kActual'] = test_y
     predictions_out['over_50kPredicted'] = predict
-    predictions_out.to_csv("Ex1_KnnResults.csv")
+    predictions_out.to_csv("datafiles/Ex1_KnnResults.csv")
 
 
 ####Functions and Objects

@@ -3,24 +3,29 @@ This is a response to the "RTI CDS Analytics Exercise 01" (see below) containing
 
 File List (in order of task relevance):
 
+Program files
 - <b>exercise01.sqlite</b> - Dataset provided by Exercise
 - <b>Exercise_1_Data_Extraction.py</b> - Python program that extracts data from sqlite database and flattens it into data to be analyzed. (input="exercise01.sqlite", output="Ex1_Flat_table.csv")
-- <b>Ex1_Flat_table.csv</b> - Flattened table from exercise01.sqlite
 - <b>Exercise_1_Staging_and_Preprocess.py</b> - Python program generates descriptive stats for all variables, performs data cleaning, and splits data into training and test sets. (input="Ex1_Flat_table.csv", output=["Ex1_train.csv", "Ex1_test.csv", "encoding_ref.pkl"])
-- <b>Ex1_train.csv</b> - Training Data for Models (validation done through 10 fold cross-validation)
-- <b>Ex1_test.csv</b> - Test Data for Models
-- <b>encoding_ref.pkl</b> - Pickle storing encoding map from string to numeric transform
 - <b>Exercise_1_Model_Build_and_Test.py</b> - Python program calculates (prints) information gain, tests four models in two rounds, tunes parameter for final model through cross-validation, tests final model, outputs results. (input=["Ex1_train.csv", "Ex1_test.csv"], output=["knnmodel.pkl", "dtmodel.pkl", "Ex1KnnResults.csv"])
-- <b>knnmodel.pkl</b> - Pickle of final KNN Model (k@10, Uniform)
-- <b>dtmodel.pkl</b> - Pickle of final Decision Tree model (min_samples_split=50, max_depth=8)
-- <b>Ex1KnnResults.csv</b> - Final predictions of test set on KNN model
 - <b>Exercise_1_Visualization.py</b> - Python program creating (input=["Ex1_Flat_table.csv", "Ex1_KnnResults.csv"], output="Final_Output_Chart.png")
 - <b>Final_Output_Chart.png</b> - Charts generated showing relationship between three major variables and target class (over_50k)
 - <b>Exercise_1_Explanation.docx</b> - Explanation of methodology and results
 - <b>README.md</b> - This file
 
+../datafiles
+- <b>Ex1_Flat_table.csv</b> - Flattened table from exercise01.sqlite
+- <b>Ex1_train.csv</b> - Training Data for Models (validation done through 10 fold cross-validation)
+- <b>Ex1_test.csv</b> - Test Data for Models
+- <b>encoding_ref.pkl</b> - Pickle storing encoding map from string to numeric transform
+- <b>knnmodel.pkl</b> - Pickle of final KNN Model (k@10, Uniform)
+- <b>dtmodel.pkl</b> - Pickle of final Decision Tree model (min_samples_split=50, max_depth=8)
+- <b>Ex1KnnResults.csv</b> - Final predictions of test set on KNN model
+
 Thanks for reviewing!
 Justin Kreft
+*Note: Edited 4/6/2016 to address clarification in task assignment
+
 ####
 
 Original Readme follows:

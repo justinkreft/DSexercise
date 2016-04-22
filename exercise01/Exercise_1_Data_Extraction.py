@@ -1,5 +1,12 @@
 __author__ = 'justinkreft'
 
+###
+# Python program that extracts data from sqlite database and flattens it into data to be analyzed.
+#
+# input="exercise01.sqlite" from working directory
+# output="Ex1_Flat_table.csv" to ..datafiles/
+###
+
 import dataset
 
 def main():
@@ -41,6 +48,6 @@ def main():
     #Note: Make exception handling, check for nulls and check for equal count
 
     # Export query results to csv using dataset library
-    dataset.freeze(result, format='csv', filename='Ex1_Flat_table.csv')
+    dataset.freeze(result, format='csv', filename='datafiles/Ex1_Flat_table.csv')
 
 main()

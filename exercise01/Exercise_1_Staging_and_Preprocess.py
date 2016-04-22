@@ -1,6 +1,17 @@
 __author__ = 'justinkreft'
 
 
+###
+# Python program loads data from Ex1_test.csv
+# - generates (prints to console) descriptive stats for all variables
+# - performs data cleaning, replacing missing and null values
+# - splits data into training and test sets and outputs to datafiles directory
+#
+# input="Ex1_Flat_table.csv"  from ..datafiles/
+# output=["Ex1_train.csv", "Ex1_test.csv", "encoding_ref.pkl"] to ..datafiles/
+###
+
+
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
@@ -20,7 +31,7 @@ def main():
 #### Extract and data frame creation
 
     # Import flat table from csv into data frame
-    data = pd.read_csv('Ex1_Flat_table.csv')
+    data = pd.read_csv('datafiles/Ex1_Flat_table.csv')
 
     # List available variables for reference
     print("\nQuick list of attributes in the DataFrame for reference?  \n", data.columns)
@@ -72,7 +83,7 @@ def main():
         le = LabelEncoder()
         data[column] = le.fit_transform(data[column].astype('str'))
         encoding_ref[column] = le.classes_
-    with open("encoding_ref.pkl", "wb") as fout:
+    with open("datafiles/encoding_ref.pkl", "wb") as fout:
         pickle.dump(encoding_ref, fout, protocol=-1)
     # Print Encoding dictionary for verification
     print(encoding_ref)
@@ -82,8 +93,8 @@ def main():
 
     # Split into train and test sets. Model Validation will use cross validation. Export
     train, test = train_test_split(data, test_size = 0.25)
-    train.to_csv("Ex1_train.csv")
-    test.to_csv("Ex1_test.csv")
+    train.to_csv("datafiles/Ex1_train.csv")
+    test.to_csv("datafiles/Ex1_test.csv")
 
 
 main()
